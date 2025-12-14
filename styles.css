@@ -1,0 +1,362 @@
+/* --- GLOBAL STYLES & RESETS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-black: #111111;
+    --color-gold: #D4AF37; /* A classic, rich gold tone */
+    --color-off-white: #F9F9F9;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-off-white);
+    background-color: var(--color-black);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-gold);
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-off-white);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-gold);
+}
+
+/* --- 1. NAVIGATION BAR --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: rgba(17, 17, 17, 0.95); /* Semi-transparent black */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold line */
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-gold);
+    letter-spacing: 2px;
+}
+
+.logo strong {
+    color: var(--color-off-white); /* Emphasizing 'WORN' */
+    font-weight: 400;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: var(--color-gold);
+    border-color: var(--color-gold);
+}
+
+.menu-icon {
+    display: none; /* Hidden on desktop */
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--color-gold);
+}
+
+
+/* --- 2. PAGE SECTIONS & UTILITIES --- */
+.page-section {
+    padding: 80px 5%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-container {
+    max-width: 800px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-gold);
+    margin: 0 auto 40px;
+}
+
+/* --- 3. HOME SECTION (HERO) --- */
+.hero-section {
+    min-height: 100vh;
+    background: url('https://source.unsplash.com/random/1600x900/?luxury,black,fashion,texture') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+.hero-content {
+    z-index: 1;
+    color: var(--color-off-white);
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    color: var(--color-off-white);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content h1 strong {
+    color: var(--color-gold);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* Animation for Hero Text */
+.animate-text {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-text:nth-child(1) { animation-delay: 0.2s; }
+.animate-text:nth-child(2) { animation-delay: 0.7s; }
+.animate-text:nth-child(3) { animation-delay: 1.2s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.cta-button:hover {
+    background-color: var(--color-gold);
+    color: var(--color-black);
+}
+
+/* --- 4. PRODUCTS SECTION --- */
+.products-grid-section {
+    background-color: var(--color-black);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: #1a1a1a;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.2);
+    border: 1px solid var(--color-gold);
+}
+
+.product-image {
+    height: 300px;
+    background-color: #333;
+    margin-bottom: 15px;
+    /* Placeholder for product image */
+    background: url('https://source.unsplash.com/random/400x500/?luxury,product') no-repeat center center/cover;
+    background-size: cover;
+}
+
+.product-card h3 {
+    color: var(--color-off-white);
+    font-size: 1.4em;
+    margin-bottom: 5px;
+}
+
+.product-card p {
+    color: var(--color-gold);
+    font-size: 1.1em;
+}
+
+/* --- 5. CONTACT SECTION --- */
+.contact-section {
+    background-color: #1c1c1c;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #444;
+    background-color: var(--color-black);
+    color: var(--color-off-white);
+    font-family: var(--font-body);
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-gold);
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.contact-info a {
+    color: var(--color-gold);
+}
+
+/* --- 6. FOOTER --- */
+footer {
+    text-align: center;
+    padding: 20px 5%;
+    background-color: #0d0d0d;
+    font-size: 0.8em;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+footer a {
+    color: #999;
+}
+
+footer a:hover {
+    color: var(--color-gold);
+}
+
+
+/* --- MOBILE RESPONSIVENESS (Media Query) --- */
+@media (max-width: 768px) {
+    
+    /* Navigation Adjustments */
+    .nav-links {
+        display: none; /* Hide desktop menu */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 61px; /* Below the navbar */
+        left: 0;
+        background-color: var(--color-black);
+        border-top: 1px solid rgba(212, 175, 55, 0.3);
+        padding: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+    }
+
+    .menu-icon {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Hero Section Adjustments */
+    .hero-content h1 {
+        font-size: 2.5em; /* Smaller title on mobile */
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+    }
+
+    /* General Section Adjustments */
+    .page-section {
+        padding: 60px 5%;
+        min-height: auto; /* Allow sections to collapse naturally */
+    }
+    
+    h2 {
+        font-size: 2em;
+    }
+
+    /* Product Grid Adjustments */
+    .products-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .product-image {
+        height: 200px;
+    }
+                                  }
