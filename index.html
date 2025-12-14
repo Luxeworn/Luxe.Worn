@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE WORN - Exclusive Fashion</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght=300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">LUXE **WORN**</div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#products">PRODUCTS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+        <div class="menu-icon">&#9776;</div>
+    </nav>
+
+    <section id="home" class="hero-section page-section">
+        <div class="hero-content">
+            <h1 class="animate-text">THE **EPITOME** OF **ELEGANCE**</h1>
+            <p class="animate-text">Discover collections where timeless design meets modern luxury.</p>
+            <a href="#products" class="cta-button animate-text">SHOP THE NEW COLLECTION</a>
+        </div>
+    </section>
+
+    <section id="about" class="page-section">
+        <div class="content-container">
+            <h2>OUR LEGACY</h2>
+            <div class="divider"></div>
+            <p>
+                **LUXE WORN** was founded on the principle that true luxury is enduring, not fleeting. Our artisans craft each piece with meticulous attention to detail, sourcing only the finest materials from around the globe. We stand for conscious luxury—quality that lasts a lifetime.
+            </p>
+            <p>
+                From bespoke tailoring to curated accessories, our legacy is built on a commitment to unparalleled craftsmanship and exclusive design.
+            </p>
+        </div>
+    </section>
+
+    <section id="products" class="page-section products-grid-section">
+        <h2>CURATED COLLECTIONS</h2>
+        <div class="divider"></div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>The Zenith Blazer</h3>
+                <p>$1,850</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Midnight Silk Scarf</h3>
+                <p>$320</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image"></div>
+                <h3>Aura Leather Clutch</h3>
+                <p>$990</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section contact-section">
+        <div class="content-container">
+            <h2>PRIVATE ENQUIRIES</h2>
+            <div class="divider"></div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message/Enquiry" rows="5" required></textarea>
+                <button type="submit" class="cta-button">SEND ENQUIRY</button>
+            </form>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:contact@luxeworn.com">contact@luxeworn.com</a></p>
+                <p>Flagship Atelier: 101 Regent Street, London W1B 4AD</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LUXE WORN. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-links a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+  </html>
